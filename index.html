@@ -1,0 +1,285 @@
+export default function PortfolioWebsite() {
+  const projects = [
+    {
+      title: "Bus Seat Booking System",
+      description:
+        "Modern online bus booking platform with live seat selection, secure payments, and operator dashboard.",
+      tech: ["React", "Python", "MySQL"],
+      image:
+        "https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "Luxury Salon Website",
+      description:
+        "Elegant salon booking website with gallery, services section, and modern responsive design.",
+      tech: ["React", "Tailwind CSS", "Firebase"],
+      image:
+        "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "Jewelry Store Website",
+      description:
+        "Premium ecommerce experience for luxury jewelry brands with clean UI and fast performance.",
+      tech: ["Next.js", "Stripe", "MongoDB"],
+      image:
+        "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200&auto=format&fit=crop",
+    },
+  ];
+
+  const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Python",
+    "Django",
+    "Tailwind CSS",
+    "MySQL",
+    "Firebase",
+    "GitHub",
+  ];
+
+  return (
+    <div className="min-h-screen bg-black text-white font-sans">
+      {/* Navbar */}
+      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-black/50 border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold tracking-wide">
+            Shehan<span className="text-gray-400">.dev</span>
+          </h1>
+
+          <nav className="hidden md:flex gap-8 text-sm text-gray-300">
+            <a href="#about" className="hover:text-white transition">
+              About
+            </a>
+            <a href="#projects" className="hover:text-white transition">
+              Projects
+            </a>
+            <a href="#skills" className="hover:text-white transition">
+              Skills
+            </a>
+            <a href="#contact" className="hover:text-white transition">
+              Contact
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative overflow-hidden pt-36 pb-24 px-6">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-black opacity-90" />
+
+        <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+          <div>
+            <div className="inline-block px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300 mb-6">
+              Full Stack Web Developer
+            </div>
+
+            <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
+              Creating Modern
+              <span className="block text-gray-400">Web Experiences</span>
+            </h1>
+
+            <p className="text-lg text-gray-300 max-w-xl leading-relaxed mb-8">
+              I build responsive, high-performance websites and booking systems
+              with modern UI/UX designs for businesses and startups.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <button className="px-8 py-4 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition duration-300">
+                Hire Me
+              </button>
+
+              <button className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10 transition duration-300">
+                View Projects
+              </button>
+            </div>
+          </div>
+
+          <div className="relative flex justify-center">
+            <div className="absolute w-72 h-72 bg-white/10 blur-3xl rounded-full" />
+
+            <div className="relative bg-white/5 border border-white/10 rounded-[2rem] p-6 backdrop-blur-xl shadow-2xl max-w-md w-full">
+              <img
+                src="https://6a119fe9e92048e6f0235b20.imgix.net/my-profile/A16D0E76-1061-4854-9E06-FB13550EE418.JPG?q=80&w=1200&auto=format&fit=crop"
+                alt="Developer"
+                className="rounded-3xl w-full h-[420px] object-cover"
+              />
+
+              <div className="mt-6 space-y-3">
+                <h2 className="text-2xl font-bold">Shehan Bashitha</h2>
+                <p className="text-gray-400">
+                  Passionate developer focused on modern websites, online booking
+                  systems, and business solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="max-w-7xl mx-auto px-6 py-24">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-4xl font-bold mb-6">About Me</h2>
+            <p className="text-gray-400 leading-relaxed text-lg">
+              I’m a creative full stack web developer who specializes in modern,
+              responsive, and user-friendly websites. I enjoy building online
+              booking systems, salon websites, ecommerce stores, and business
+              platforms with clean UI and smooth user experiences.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6">
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+              <h3 className="text-4xl font-bold mb-2">20+</h3>
+              <p className="text-gray-400">Projects Completed</p>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+              <h3 className="text-4xl font-bold mb-2">100%</h3>
+              <p className="text-gray-400">Responsive Design</p>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+              <h3 className="text-4xl font-bold mb-2">Fast</h3>
+              <p className="text-gray-400">Performance Focused</p>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+              <h3 className="text-4xl font-bold mb-2">24/7</h3>
+              <p className="text-gray-400">Support & Communication</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="max-w-7xl mx-auto px-6 py-24">
+        <div className="flex items-center justify-between mb-14">
+          <div>
+            <h2 className="text-4xl font-bold mb-3">Featured Projects</h2>
+            <p className="text-gray-400">
+              Some of my recent modern web development projects.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="group bg-white/5 border border-white/10 rounded-[2rem] overflow-hidden hover:-translate-y-2 transition duration-500"
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-64 w-full object-cover group-hover:scale-110 transition duration-700"
+                />
+              </div>
+
+              <div className="p-7">
+                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+
+                <p className="text-gray-400 leading-relaxed mb-6">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-3">
+                  {project.tech.map((item, i) => (
+                    <span
+                      key={i}
+                      className="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-300"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section id="skills" className="max-w-7xl mx-auto px-6 py-24">
+        <div className="text-center mb-14">
+          <h2 className="text-4xl font-bold mb-4">My Skills</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Technologies and tools I use to create powerful modern websites.
+          </p>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-5">
+          {skills.map((skill, index) => (
+            <div
+              key={index}
+              className="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-lg hover:bg-white hover:text-black transition duration-300"
+            >
+              {skill}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="max-w-5xl mx-auto px-6 py-24">
+        <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-[2rem] p-10 text-center">
+          <h2 className="text-4xl font-bold mb-4">
+            Let’s Build Something Amazing
+          </h2>
+
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-6">
+            Looking for a modern website, booking system, or business platform?
+            Let’s work together and create something professional.
+          </p>
+
+          {/* Contact Info */}
+          <div className="text-gray-300 mb-10 space-y-2">
+            <p>
+              📞 Phone / WhatsApp: 
+              <a className="text-white hover:underline" href="tel:+94767291214">
+                (+94) 76 729 1214
+              </a>
+            </p>
+            <p>
+              💬 WhatsApp Chat: 
+              <a className="text-white hover:underline" href="https://wa.me/94767291214" target="_blank">
+                Message Me
+              </a>
+            </p>
+            <p>
+              📧 Email: 
+              <a className="text-white hover:underline" href="mailto:s9bashitha99@gmail.com">
+                s9bashitha99@gmail.com
+              </a>
+            </p>
+            <p>
+              🔗 LinkedIn: 
+              <a className="text-white hover:underline" href="https://linkedin.com/in/shehan-bashitha-382146242" target="_blank">
+                View My Profile
+              </a>
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-5">
+            <button className="px-8 py-4 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition duration-300">
+              Contact Me
+            </button>
+
+            <button className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10 transition duration-300">
+              Download CV
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 py-8 text-center text-gray-500 text-sm">
+        © 2026 Shehan Bashitha. All rights reserved.
+      </footer>
+    </div>
+  );
+}
