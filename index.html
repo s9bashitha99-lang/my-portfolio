@@ -1,285 +1,393 @@
-export default function PortfolioWebsite() {
-  const projects = [
-    {
-      title: "Bus Seat Booking System",
-      description:
-        "Modern online bus booking platform with live seat selection, secure payments, and operator dashboard.",
-      tech: ["React", "Python", "MySQL"],
-      image:
-        "https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      title: "Luxury Salon Website",
-      description:
-        "Elegant salon booking website with gallery, services section, and modern responsive design.",
-      tech: ["React", "Tailwind CSS", "Firebase"],
-      image:
-        "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop",
-    },
-    {
-      title: "Jewelry Store Website",
-      description:
-        "Premium ecommerce experience for luxury jewelry brands with clean UI and fast performance.",
-      tech: ["Next.js", "Stripe", "MongoDB"],
-      image:
-        "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200&auto=format&fit=crop",
-    },
-  ];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Shehan Bashitha | Full Stack Developer</title>
+  <!-- Tailwind CSS + basic interceptions -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for elegant sans (similar to modern design) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  <!-- override default font to match clean modern aesthetic -->
+  <style>
+    * {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background-color: #000000;
+    }
+    /* fix for fixed header overlapping anchor targets */
+    section[id] {
+      scroll-margin-top: 90px;
+    }
+    /* optional subtle custom glow */
+    .glow-card {
+      transition: all 0.3s ease;
+    }
+    .custom-blur {
+      backdrop-filter: blur(12px);
+    }
+    /* custom button smooth transition */
+    .btn-transition {
+      transition: transform 0.2s ease, background 0.2s;
+    }
+    .btn-transition:hover {
+      transform: scale(1.02);
+    }
+    /* image scale helper */
+    .img-scale {
+      transition: transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .group:hover .img-scale {
+      transform: scale(1.08);
+    }
+    /* hide scrollbar but keep functionality (optional elegance) */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0a0a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2c2c2c;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans antialiased">
 
-  const skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Python",
-    "Django",
-    "Tailwind CSS",
-    "MySQL",
-    "Firebase",
-    "GitHub",
-  ];
-
-  return (
-    <div className="min-h-screen bg-black text-white font-sans">
-      {/* Navbar */}
-      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-black/50 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold tracking-wide">
-            Shehan<span className="text-gray-400">.dev</span>
-          </h1>
-
-          <nav className="hidden md:flex gap-8 text-sm text-gray-300">
-            <a href="#about" className="hover:text-white transition">
-              About
-            </a>
-            <a href="#projects" className="hover:text-white transition">
-              Projects
-            </a>
-            <a href="#skills" className="hover:text-white transition">
-              Skills
-            </a>
-            <a href="#contact" className="hover:text-white transition">
-              Contact
-            </a>
-          </nav>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="relative overflow-hidden pt-36 pb-24 px-6">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-black opacity-90" />
-
-        <div className="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
-          <div>
-            <div className="inline-block px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300 mb-6">
-              Full Stack Web Developer
-            </div>
-
-            <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
-              Creating Modern
-              <span className="block text-gray-400">Web Experiences</span>
-            </h1>
-
-            <p className="text-lg text-gray-300 max-w-xl leading-relaxed mb-8">
-              I build responsive, high-performance websites and booking systems
-              with modern UI/UX designs for businesses and startups.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition duration-300">
-                Hire Me
-              </button>
-
-              <button className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10 transition duration-300">
-                View Projects
-              </button>
-            </div>
-          </div>
-
-          <div className="relative flex justify-center">
-            <div className="absolute w-72 h-72 bg-white/10 blur-3xl rounded-full" />
-
-            <div className="relative bg-white/5 border border-white/10 rounded-[2rem] p-6 backdrop-blur-xl shadow-2xl max-w-md w-full">
-              <img
-                src="https://6a119fe9e92048e6f0235b20.imgix.net/my-profile/A16D0E76-1061-4854-9E06-FB13550EE418.JPG?q=80&w=1200&auto=format&fit=crop"
-                alt="Developer"
-                className="rounded-3xl w-full h-[420px] object-cover"
-              />
-
-              <div className="mt-6 space-y-3">
-                <h2 className="text-2xl font-bold">Shehan Bashitha</h2>
-                <p className="text-gray-400">
-                  Passionate developer focused on modern websites, online booking
-                  systems, and business solutions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section id="about" className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-4xl font-bold mb-6">About Me</h2>
-            <p className="text-gray-400 leading-relaxed text-lg">
-              I’m a creative full stack web developer who specializes in modern,
-              responsive, and user-friendly websites. I enjoy building online
-              booking systems, salon websites, ecommerce stores, and business
-              platforms with clean UI and smooth user experiences.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-6">
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
-              <h3 className="text-4xl font-bold mb-2">20+</h3>
-              <p className="text-gray-400">Projects Completed</p>
-            </div>
-
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
-              <h3 className="text-4xl font-bold mb-2">100%</h3>
-              <p className="text-gray-400">Responsive Design</p>
-            </div>
-
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
-              <h3 className="text-4xl font-bold mb-2">Fast</h3>
-              <p className="text-gray-400">Performance Focused</p>
-            </div>
-
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
-              <h3 className="text-4xl font-bold mb-2">24/7</h3>
-              <p className="text-gray-400">Support & Communication</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects */}
-      <section id="projects" className="max-w-7xl mx-auto px-6 py-24">
-        <div className="flex items-center justify-between mb-14">
-          <div>
-            <h2 className="text-4xl font-bold mb-3">Featured Projects</h2>
-            <p className="text-gray-400">
-              Some of my recent modern web development projects.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group bg-white/5 border border-white/10 rounded-[2rem] overflow-hidden hover:-translate-y-2 transition duration-500"
-            >
-              <div className="overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-64 w-full object-cover group-hover:scale-110 transition duration-700"
-                />
-              </div>
-
-              <div className="p-7">
-                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-
-                <p className="text-gray-400 leading-relaxed mb-6">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-3">
-                  {project.tech.map((item, i) => (
-                    <span
-                      key={i}
-                      className="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-300"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Skills */}
-      <section id="skills" className="max-w-7xl mx-auto px-6 py-24">
-        <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold mb-4">My Skills</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Technologies and tools I use to create powerful modern websites.
-          </p>
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-5">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-lg hover:bg-white hover:text-black transition duration-300"
-            >
-              {skill}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="max-w-5xl mx-auto px-6 py-24">
-        <div className="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-[2rem] p-10 text-center">
-          <h2 className="text-4xl font-bold mb-4">
-            Let’s Build Something Amazing
-          </h2>
-
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-6">
-            Looking for a modern website, booking system, or business platform?
-            Let’s work together and create something professional.
-          </p>
-
-          {/* Contact Info */}
-          <div className="text-gray-300 mb-10 space-y-2">
-            <p>
-              📞 Phone / WhatsApp: 
-              <a className="text-white hover:underline" href="tel:+94767291214">
-                (+94) 76 729 1214
-              </a>
-            </p>
-            <p>
-              💬 WhatsApp Chat: 
-              <a className="text-white hover:underline" href="https://wa.me/94767291214" target="_blank">
-                Message Me
-              </a>
-            </p>
-            <p>
-              📧 Email: 
-              <a className="text-white hover:underline" href="mailto:s9bashitha99@gmail.com">
-                s9bashitha99@gmail.com
-              </a>
-            </p>
-            <p>
-              🔗 LinkedIn: 
-              <a className="text-white hover:underline" href="https://linkedin.com/in/shehan-bashitha-382146242" target="_blank">
-                View My Profile
-              </a>
-            </p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-5">
-            <button className="px-8 py-4 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition duration-300">
-              Contact Me
-            </button>
-
-            <button className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10 transition duration-300">
-              Download CV
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-white/10 py-8 text-center text-gray-500 text-sm">
-        © 2026 Shehan Bashitha. All rights reserved.
-      </footer>
+  <!-- ========== NAVBAR (fixed with blur) ========== -->
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-black/50 border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-wide">
+        Shehan<span class="text-gray-400">.dev</span>
+      </h1>
+      <nav class="hidden md:flex gap-8 text-sm text-gray-300">
+        <a href="#about" class="hover:text-white transition-colors duration-200">About</a>
+        <a href="#projects" class="hover:text-white transition-colors duration-200">Projects</a>
+        <a href="#skills" class="hover:text-white transition-colors duration-200">Skills</a>
+        <a href="#contact" class="hover:text-white transition-colors duration-200">Contact</a>
+      </nav>
     </div>
-  );
-}
+  </header>
+
+  <main class="overflow-hidden">
+    <!-- ========== HERO SECTION ========== -->
+    <section class="relative overflow-hidden pt-36 pb-24 px-6">
+      <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-black opacity-90"></div>
+      <div class="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+        <!-- left content -->
+        <div>
+          <div class="inline-block px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300 mb-6 backdrop-blur-sm">
+            Full Stack Web Developer
+          </div>
+          <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6 tracking-tight">
+            Creating Modern
+            <span class="block text-gray-400">Web Experiences</span>
+          </h1>
+          <p class="text-lg text-gray-300 max-w-xl leading-relaxed mb-8">
+            I build responsive, high-performance websites and booking systems
+            with modern UI/UX designs for businesses and startups.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button id="hireMeBtn" class="px-8 py-4 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition duration-300 shadow-lg shadow-white/10 cursor-pointer">
+              Hire Me
+            </button>
+            <button id="viewProjectsBtn" class="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10 transition duration-300 cursor-pointer">
+              View Projects
+            </button>
+          </div>
+        </div>
+        <!-- right card / profile image card -->
+        <div class="relative flex justify-center">
+          <div class="absolute w-72 h-72 bg-white/10 blur-3xl rounded-full animate-pulse"></div>
+          <div class="relative bg-white/5 border border-white/10 rounded-[2rem] p-6 backdrop-blur-xl shadow-2xl max-w-md w-full transition-all duration-500 hover:shadow-white/5">
+            <img 
+              src="https://6a119fe9e92048e6f0235b20.imgix.net/my-profile/A16D0E76-1061-4854-9E06-FB13550EE418.JPG?q=80&w=1200&auto=format&fit=crop"
+              alt="Shehan Bashitha - developer portrait"
+              class="rounded-3xl w-full h-[420px] object-cover object-top shadow-2xl"
+              loading="eager"
+            >
+            <div class="mt-6 space-y-3">
+              <h2 class="text-2xl font-bold">Shehan Bashitha</h2>
+              <p class="text-gray-400 leading-relaxed">
+                Passionate developer focused on modern websites, online booking
+                systems, and business solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="max-w-7xl mx-auto px-6 py-24">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-4xl font-bold mb-6 tracking-tight">About Me</h2>
+          <p class="text-gray-400 leading-relaxed text-lg">
+            I'm a creative full stack web developer who specializes in modern,
+            responsive, and user-friendly websites. I enjoy building online
+            booking systems, salon websites, ecommerce stores, and business
+            platforms with clean UI and smooth user experiences.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm transition-all hover:bg-white/10">
+            <h3 class="text-4xl font-bold mb-2">20+</h3>
+            <p class="text-gray-400">Projects Completed</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm transition-all hover:bg-white/10">
+            <h3 class="text-4xl font-bold mb-2">100%</h3>
+            <p class="text-gray-400">Responsive Design</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm transition-all hover:bg-white/10">
+            <h3 class="text-4xl font-bold mb-2">Fast</h3>
+            <p class="text-gray-400">Performance Focused</p>
+          </div>
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm transition-all hover:bg-white/10">
+            <h3 class="text-4xl font-bold mb-2">24/7</h3>
+            <p class="text-gray-400">Support & Communication</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS SECTION ========== -->
+    <section id="projects" class="max-w-7xl mx-auto px-6 py-24">
+      <div class="flex items-center justify-between mb-14">
+        <div>
+          <h2 class="text-4xl font-bold mb-3 tracking-tight">Featured Projects</h2>
+          <p class="text-gray-400">Some of my recent modern web development projects.</p>
+        </div>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- project 1: Bus Seat Booking System -->
+        <div class="group bg-white/5 border border-white/10 rounded-[2rem] overflow-hidden hover:-translate-y-2 transition duration-500">
+          <div class="overflow-hidden h-64">
+            <img 
+              src="https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?q=80&w=1200&auto=format&fit=crop" 
+              alt="Bus Seat Booking System interface" 
+              class="h-full w-full object-cover img-scale"
+            >
+          </div>
+          <div class="p-7">
+            <h3 class="text-2xl font-bold mb-3">Bus Seat Booking System</h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              Modern online bus booking platform with live seat selection, secure payments, and operator dashboard.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <span class="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-300">React</span>
+              <span class="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-300">Python</span>
+              <span class="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-300">MySQL</span>
+            </div>
+          </div>
+        </div>
+        <!-- project 2: Luxury Salon Website -->
+        <div class="group bg-white/5 border border-white/10 rounded-[2rem] overflow-hidden hover:-translate-y-2 transition duration-500">
+          <div class="overflow-hidden h-64">
+            <img 
+              src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop" 
+              alt="Luxury Salon Website concept" 
+              class="h-full w-full object-cover img-scale"
+            >
+          </div>
+          <div class="p-7">
+            <h3 class="text-2xl font-bold mb-3">Luxury Salon Website</h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              Elegant salon booking website with gallery, services section, and modern responsive design.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <span class="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-300">React</span>
+              <span class="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-300">Tailwind CSS</span>
+              <span class="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-300">Firebase</span>
+            </div>
+          </div>
+        </div>
+        <!-- project 3: Jewelry Store Website -->
+        <div class="group bg-white/5 border border-white/10 rounded-[2rem] overflow-hidden hover:-translate-y-2 transition duration-500">
+          <div class="overflow-hidden h-64">
+            <img 
+              src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200&auto=format&fit=crop" 
+              alt="Jewelry Store luxury ecommerce" 
+              class="h-full w-full object-cover img-scale"
+            >
+          </div>
+          <div class="p-7">
+            <h3 class="text-2xl font-bold mb-3">Jewelry Store Website</h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              Premium ecommerce experience for luxury jewelry brands with clean UI and fast performance.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <span class="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-300">Next.js</span>
+              <span class="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-300">Stripe</span>
+              <span class="px-4 py-2 rounded-full bg-white/10 text-sm text-gray-300">MongoDB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS SECTION ========== -->
+    <section id="skills" class="max-w-7xl mx-auto px-6 py-24">
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-bold mb-4 tracking-tight">My Skills</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Technologies and tools I use to create powerful modern websites.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-5">
+        <div class="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-lg hover:bg-white hover:text-black transition duration-300 cursor-default">HTML</div>
+        <div class="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-lg hover:bg-white hover:text-black transition duration-300 cursor-default">CSS</div>
+        <div class="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-lg hover:bg-white hover:text-black transition duration-300 cursor-default">JavaScript</div>
+        <div class="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-lg hover:bg-white hover:text-black transition duration-300 cursor-default">React</div>
+        <div class="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-lg hover:bg-white hover:text-black transition duration-300 cursor-default">Python</div>
+        <div class="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-lg hover:bg-white hover:text-black transition duration-300 cursor-default">Django</div>
+        <div class="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-lg hover:bg-white hover:text-black transition duration-300 cursor-default">Tailwind CSS</div>
+        <div class="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-lg hover:bg-white hover:text-black transition duration-300 cursor-default">MySQL</div>
+        <div class="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-lg hover:bg-white hover:text-black transition duration-300 cursor-default">Firebase</div>
+        <div class="px-6 py-4 rounded-2xl bg-white/5 border border-white/10 text-lg hover:bg-white hover:text-black transition duration-300 cursor-default">GitHub</div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="max-w-5xl mx-auto px-6 py-24">
+      <div class="bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-[2rem] p-10 text-center backdrop-blur-sm transition-all duration-300">
+        <h2 class="text-4xl font-bold mb-4 tracking-tight">Let's Build Something Amazing</h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-6">
+          Looking for a modern website, booking system, or business platform?
+          Let's work together and create something professional.
+        </p>
+        <!-- contact info with active links -->
+        <div class="text-gray-300 mb-10 space-y-2 text-base md:text-lg">
+          <p class="flex flex-wrap items-center justify-center gap-1">📞 Phone / WhatsApp: 
+            <a class="text-white hover:underline font-medium transition" href="tel:+94767291214">(+94) 76 729 1214</a>
+          </p>
+          <p>💬 WhatsApp Chat: 
+            <a class="text-white hover:underline transition" href="https://wa.me/94767291214" target="_blank" rel="noopener noreferrer">Message Me</a>
+          </p>
+          <p>📧 Email: 
+            <a class="text-white hover:underline transition" href="mailto:s9bashitha99@gmail.com">s9bashitha99@gmail.com</a>
+          </p>
+          <p>🔗 LinkedIn: 
+            <a class="text-white hover:underline transition" href="https://linkedin.com/in/shehan-bashitha-382146242" target="_blank" rel="noopener noreferrer">View My Profile</a>
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-5">
+          <button id="contactFooterBtn" class="px-8 py-4 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition duration-300 shadow-md cursor-pointer">
+            Contact Me
+          </button>
+          <button id="downloadCvBtn" class="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10 transition duration-300 cursor-pointer">
+            Download CV
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-8 text-center text-gray-500 text-sm">
+    © 2026 Shehan Bashitha. All rights reserved.
+  </footer>
+
+  <!-- interactive JS: scroll behaviors, button alerts, and smooth actions -->
+  <script>
+    (function() {
+      // Helper smooth scroll
+      function smoothScrollToElement(elementId) {
+        const targetElement = document.querySelector(elementId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          console.warn(`Element ${elementId} not found`);
+        }
+      }
+
+      // HIRE ME button -> contact section
+      const hireBtn = document.getElementById('hireMeBtn');
+      if (hireBtn) {
+        hireBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          smoothScrollToElement('#contact');
+        });
+      }
+
+      // VIEW PROJECTS button -> projects section
+      const viewProjectsBtn = document.getElementById('viewProjectsBtn');
+      if (viewProjectsBtn) {
+        viewProjectsBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          smoothScrollToElement('#projects');
+        });
+      }
+
+      // Contact Me button inside contact card (show a small reminder)
+      const contactFooterBtn = document.getElementById('contactFooterBtn');
+      if (contactFooterBtn) {
+        contactFooterBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          // subtle alert but friendly
+          alert("📬 I'd love to hear from you! Use the WhatsApp, email or phone above to get in touch directly.");
+        });
+      }
+
+      // Download CV button (informative placeholder, can be extended)
+      const downloadBtn = document.getElementById('downloadCvBtn');
+      if (downloadBtn) {
+        downloadBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          // Polite message showing CV availability
+          alert("📄 My detailed CV is available upon request. Feel free to contact me via WhatsApp or email, and I'll share it personally.\n\nThank you for your interest!");
+        });
+      }
+
+      // Optional: add smooth scroll for all internal nav links (handling default anchor)
+      const allNavLinks = document.querySelectorAll('a[href^="#"]');
+      allNavLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const targetHash = this.getAttribute('href');
+          if (targetHash && targetHash !== '#') {
+            const targetElem = document.querySelector(targetHash);
+            if (targetElem) {
+              e.preventDefault();
+              targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
+      });
+      
+      // also make sure all external links have safe attributes (already but double check)
+      const externalLinks = document.querySelectorAll('a[href^="http"]');
+      externalLinks.forEach(link => {
+        if (!link.getAttribute('target')) {
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener noreferrer');
+        }
+      });
+    })();
+  </script>
+  <!-- small additional style for better responsiveness on very small devices -->
+  <style>
+    @media (max-width: 640px) {
+      .rounded-2xl, .rounded-[2rem] {
+        border-radius: 1.5rem;
+      }
+      .text-5xl {
+        font-size: 2.5rem;
+      }
+      .p-10 {
+        padding: 1.75rem;
+      }
+      section {
+        scroll-margin-top: 80px;
+      }
+    }
+    /* performance & subtle effects */
+    img {
+      image-rendering: crisp-edges;
+    }
+    .backdrop-blur-xl {
+      backdrop-filter: blur(16px);
+    }
+  </style>
+</body>
+</html>
